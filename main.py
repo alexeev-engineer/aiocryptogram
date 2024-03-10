@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# -*- coding:utf-8 -*-
 """aiocryptogram - асинхронная библиотека для работы с Crypto Pay API
 Разработчик: Alexeev Bronislav
-Лицензия: GNU GPL v3"""
+Лицензия: GNU GPL v3
+"""
 from rich import print
 from aiocryptogram.cryptopay import CryptoPayBot
 from configparser import ConfigParser
@@ -13,7 +13,7 @@ __version__ = '0.1.0'
 
 async def main():
     print(f'aiocryptogram v {__version__}')
-    print(f'Copyright (C) Alexeev Bronislav 2024 @ All rights reversed')
+    print('Copyright (C) Alexeev Bronislav 2024 @ All rights reversed')
     
     # Читаем config.ini и парсим из него токен и имя
     config = ConfigParser()

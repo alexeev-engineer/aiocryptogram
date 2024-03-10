@@ -14,8 +14,8 @@ def send_request(request_type: str, api_method: str, headers: dict, data: dict=N
 	 api_method: str - метод API
 	 headers: dict - заголовок запроса
 	 testnet: bool - используется тестнет или меиннет
-	 data: dict=None - данные (при post запросах)"""
-
+	data: dict=None - данные (при post запросах)
+	"""
 	if testnet:
 		url = 'https://testnet-pay.crypt.bot/api'
 	else:
@@ -33,6 +33,7 @@ def send_request(request_type: str, api_method: str, headers: dict, data: dict=N
 
 class CryptoPayBot:
 	"""Класс криптобота"""
+
 	def __init__(self, name: str, api_token: str, testnet: bool=False, debug: bool=True) -> None:
 		self.name = name
 		self.API_TOKEN = api_token
@@ -68,7 +69,8 @@ class CryptoPayBot:
 	def get_me(self) -> list:
 		"""Получение информации об приложении. Используется для проверки работы приложения
 
-		Возвращает список: логическое значение (правильно ли работает приложение) и сообщение"""
+		Возвращает список: логическое значение (правильно ли работает приложение) и сообщение
+		"""
 		try:
 			data = send_request('get', 'getMe', self.headers, self.testnet)
 		except requests.exceptions.ConnectionError as ex:
@@ -159,7 +161,8 @@ class CryptoPayBot:
 		 + cryptocurrency: str - криптовалюта. Поддерживаемые: USDT, TON, BTC, ETH, LTC, BNB, TRX, USDC (и JET в TestNet)
 		 + amount: float - сумма чека
 		Возвращает:
-		+ str - данные"""
+		+ str - данные
+		"""
 		cryptocurrency = cryptocurrency.upper()
 
 		if cryptocurrency in ["USDT", "TON", "BTC", "ETH", "LTC", "BNB", "TRX", "USDC"] or \
