@@ -1,0 +1,55 @@
+[project]
+name = "aiocryptogram"
+version = "0.1.0"
+
+authors = [
+	{ name="Alexeev Bronislav", email="bro.alexeev@inbox.ru" },
+]
+maintainers = [
+	{ name="Alexeev Bronislav", email="bro.alexeev@inbox.ru" },
+]
+
+description = "Fast async"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: GNU GPL v3",
+	"Operating System :: Linux",
+	"Development Status :: 1 - Active indev period",
+]
+license = {file = "LICENSE"}
+dependencies = [
+	"rich",
+	'ruff',
+	'asyncio',
+	'httpx',
+	'icecream'
+]
+keywords = ["cryptocurrency", "crypto", "cryptopay", "pay", "asyncio", 'telegram']
+
+[project.urls]
+Homepage = "https://github.com/alexeev-engineer/aiocryptogram"
+Issues = "https://github.com/alexeev-engineer/aiocryptogram/issues"
+Documentation ="https://github.com/alexeev-engineer/aiocryptogram/main/docs/index.md"
+Repository = "https://github.com/alexeev-engineer/aiocryptogram"
+Changelog = "https://github.com/alexeev-engineer/aiocryptogram/main/CHANGELOG.md"
+
+[tool.ruff]
+show-fixes = true
+lint.select = [
+	"E",
+	"F",
+	"UP",
+	"D"
+]
+
+[build-system]
+requires = [
+	"setuptools >= 65",
+	"wheel >= 0.38",
+]
+build-backend = "setuptools.build_meta"
+
+[project.gui-scripts]
+spam-gui = "spam:main_gui"
